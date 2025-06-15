@@ -40,6 +40,7 @@ export async function sendEmail({ to, subject, html, from = "no-reply@indicjourn
   }
 }
 
+// Named export for the contact email function
 export async function sendContactEmail(data: {
   firstName: string
   lastName: string
@@ -117,3 +118,13 @@ export function generateBookingConfirmationEmail(bookingData: {
     `,
   }
 }
+
+// Add a module export object with all the functions for better compatibility
+const emailService = {
+  sendEmail,
+  sendContactEmail,
+  generateContactFormEmail,
+  generateBookingConfirmationEmail
+};
+
+export default emailService;

@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server"
-import { sendContactEmail } from "@/lib/email-service"
+import emailService from "@/lib/email-service"
 import { createInquiry } from "@/lib/supabase-queries"
 
 export async function POST(request: Request) {
@@ -15,7 +15,7 @@ export async function POST(request: Request) {
     }
 
     // Send email
-    const emailResult = await sendContactEmail({
+    const emailResult = await emailService.sendContactEmail({
       firstName: body.firstName,
       lastName: body.lastName,
       email: body.email,
