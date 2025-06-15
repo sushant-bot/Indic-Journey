@@ -1,7 +1,5 @@
 "use client"
 
-import type React from "react"
-
 import { useState, useEffect } from "react"
 import { useRouter } from "next/navigation"
 import { Button } from "@/components/ui/button"
@@ -14,7 +12,7 @@ import { Switch } from "@/components/ui/switch"
 import { toast } from "sonner"
 import { Loader2, ArrowLeft, Save, Info } from "lucide-react"
 import { createClient } from "@/lib/supabase"
-import { slugify } from "@/lib/utils"
+//import { slugify } from "@/lib/utils"
 
 interface Category {
   id: string
@@ -36,6 +34,7 @@ export default function NewTourPage() {
   const [categoryId, setCategoryId] = useState("")
   const [featured, setFeatured] = useState(false)
   const [enabled, setEnabled] = useState(true)
+  const [published, setPublished] = useState(true)
 
   useEffect(() => {
     const fetchCategories = async () => {
@@ -62,7 +61,7 @@ export default function NewTourPage() {
   // Auto-generate slug from title
   useEffect(() => {
     if (title) {
-      setSlug(slugify(title))
+      setSlug(title)
     }
   }, [title])
 
@@ -253,4 +252,19 @@ export default function NewTourPage() {
                 <Switch checked={featured} onCheckedChange={setFeatured} />
               </div>
 
-              <div className="flex items-\
+              <div className="flex items-center justify-between rounded-lg border p-4">
+                <div>
+                  <h3 className="font-medium">Published</h3>
+                  <p className="text-sm text-muted-foreground">
+                    Make this tour visible on the website
+                  </p>
+                </div>
+                <Switch checked={published} onCheckedChange={setPublished} />
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+      </form>
+    </div>
+  )
+}
