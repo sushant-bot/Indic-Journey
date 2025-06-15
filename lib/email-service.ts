@@ -119,6 +119,9 @@ export function generateBookingConfirmationEmail(bookingData: {
   }
 }
 
+// Ensure named export for compatibility
+// (Removed duplicate export to avoid redeclaration error)
+
 // Add a module export object with all the functions for better compatibility
 const emailService = {
   sendEmail,
