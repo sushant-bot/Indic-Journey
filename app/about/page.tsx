@@ -29,20 +29,25 @@ export default function AboutPage() {
   return (
     <MainLayout>
       {/* Hero Section */}
-      <section className="relative py-20 lg:py-32 overflow-hidden">
-        <div className="absolute inset-0 z-0">
-          <Image src="/images/about-us.png" alt="About Indic Journeys" fill className="object-cover" />
-          <div className="absolute inset-0 bg-black/60"></div>
-        </div>
+      <section className="relative py-20 lg:py-32 overflow-hidden bg-gradient-to-r from-orange-500 to-orange-600">
+        <div className="absolute top-20 left-20 w-72 h-72 bg-yellow-400/10 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-20 right-20 w-96 h-96 bg-red-500/10 rounded-full blur-3xl"></div>
 
         <div className="container mx-auto px-4 relative z-10 text-center text-white">
-          <h1 className="text-4xl lg:text-6xl font-bold mb-6 font-poppins">
-            About <span className="text-yellow-400">Indic Journeys</span>
-          </h1>
-          <p className="text-xl max-w-3xl mx-auto font-open-sans">
+          <div className="inline-flex items-center justify-center px-4 py-1.5 mb-6 text-sm font-semibold bg-yellow-400 text-orange-800 rounded-full">
+            <span>Our Company</span>
+          </div>
+          <h1 className="text-5xl lg:text-7xl font-bold mb-6">About Us</h1>
+          <p className="text-xl max-w-3xl mx-auto">
             Discover the story behind India's premier travel experience curator, our mission, and the passionate team
             making your journeys unforgettable.
           </p>
+        </div>
+
+        <div className="absolute bottom-0 left-0 right-0">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 100" className="w-full">
+            <path fill="#ffffff" fillOpacity="1" d="M0,32L80,42.7C160,53,320,75,480,74.7C640,75,800,53,960,42.7C1120,32,1280,32,1440,37.3L1440,100L1360,100C1280,100,1120,100,960,100C800,100,640,100,480,100C320,100,160,100,80,100L0,100Z"></path>
+          </svg>
         </div>
       </section>
 
@@ -103,7 +108,7 @@ export default function AboutPage() {
 
             <div className="relative">
               <Image
-                src="/images/team-photo.png"
+                src="/images/about.jpeg"
                 alt="The Indic Journeys Team"
                 width={600}
                 height={400}

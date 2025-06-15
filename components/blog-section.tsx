@@ -144,7 +144,7 @@ export function BlogSection() {
 
                 <p className="text-gray-600 mb-4 font-['Open_Sans'] line-clamp-3">{String(post.excerpt)}</p>
 
-                <Link href={`/blog/${post.slug}`}>
+                <Link href="/blog">
                   <Button variant="outline" className="w-full group">
                     Read More
                     <ArrowRight className="h-4 w-4 ml-2 group-hover:translate-x-1 transition-transform" />
