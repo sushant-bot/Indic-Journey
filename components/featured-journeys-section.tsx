@@ -178,6 +178,7 @@ export function FeaturedJourneysSection() {
         description: "Follow the legendary Ramayana trail through the beautiful island of Sri Lanka.",
         enabled: true,
         featured: true,
+        
       },
     ]
   }
@@ -196,6 +197,22 @@ export function FeaturedJourneysSection() {
       </section>
     )
   }
+
+  // Update the links for the "View Details" buttons to point to the correct pages
+  const tourLinks = [
+    "/fixed-departures/do-dham-kedarnath-badrinath",
+    "/fixed-departures/classic-kerala",
+    "/customized-holidays/varanasi",
+    "/customized-holidays/sri-lanka-ramayana-trail",
+  ];
+
+  const toursWithButtons = tours.map((tour, index) => ({
+    ...tour,
+    buttons: [
+      { label: "View Details", link: tourLinks[index] },
+      { label: "Book Now", link: "/contact" },
+    ],
+  }));
 
   return (
     <section id="tours" className="py-16 lg:py-24 bg-gradient-to-b from-gray-50 to-white relative overflow-hidden">
@@ -219,7 +236,7 @@ export function FeaturedJourneysSection() {
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-6">
-          {tours.map((tour, index) => {
+          {toursWithButtons.map((tour, index) => {
             return (
               <Card
                 key={tour.id}
@@ -297,11 +314,15 @@ export function FeaturedJourneysSection() {
                     </div>
                   )}
 
-                  <Link href={`/tours/${tour.slug}`}>
-                    <Button className="w-full bg-gradient-to-r from-yellow-400 to-red-600 hover:from-yellow-500 hover:to-red-700 text-black hover:text-white font-semibold">
-                      View Details
-                    </Button>
-                  </Link>
+                  <div className="flex flex-col gap-2">
+                    {tour.buttons.map((button, idx) => (
+                      <Link href={button.link} key={idx}>
+                        <Button className="w-full bg-gradient-to-r from-yellow-400 to-red-600 hover:from-yellow-500 hover:to-red-700 text-black hover:text-white font-semibold">
+                          {button.label}
+                        </Button>
+                      </Link>
+                    ))}
+                  </div>
                 </CardContent>
               </Card>
             )
