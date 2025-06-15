@@ -40,7 +40,7 @@ export function ContactSection() {
 
       if (response.ok) {
         toast({
-          title: "Message Sent Successfully!",
+          title: "Message Sent !",
           description: "Thank you for your inquiry. We'll get back to you soon.",
         })
         e.currentTarget.reset()
