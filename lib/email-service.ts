@@ -40,6 +40,40 @@ export async function sendEmail({ to, subject, html, from = "no-reply@indicjourn
   }
 }
 
+export async function sendContactEmail(data: {
+  firstName: string
+  lastName: string
+  email: string
+  phone?: string
+  tourType?: string
+  travelers?: number
+  destination?: string
+  message: string
+}) {
+  const { firstName, lastName, email, phone, tourType, travelers, destination, message } = data
+
+  const subject = `New Contact Form Submission from ${firstName} ${lastName}`
+
+  const html = `
+    <h1>New Contact Form Submission</h1>
+    <p><strong>Name:</strong> ${firstName} ${lastName}</p>
+    <p><strong>Email:</strong> ${email}</p>
+    ${phone ? `<p><strong>Phone:</strong> ${phone}</p>` : ""}
+    ${tourType ? `<p><strong>Tour Type:</strong> ${tourType}</p>` : ""}
+    ${travelers ? `<p><strong>Number of Travelers:</strong> ${travelers}</p>` : ""}
+    ${destination ? `<p><strong>Destination:</strong> ${destination}</p>` : ""}
+    <p><strong>Message:</strong></p>
+    <p>${message.replace(/\n/g, "<br>")}</p>
+  `
+
+  // Send to admin email
+  return sendEmail({
+    to: process.env.ADMIN_EMAIL || "info@indicjourneys.com",
+    subject,
+    html,
+  })
+}
+
 export function generateContactFormEmail(formData: {
   name: string
   email: string
