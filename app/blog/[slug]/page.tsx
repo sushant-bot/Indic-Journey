@@ -13,7 +13,7 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
     title: "10 Hidden Gems in Rajasthan You Must Visit",
     excerpt:
       "Discover the lesser-known treasures of the Land of Kings, from secret palaces to mystical temples that most tourists never see.",
-    image: "/images/rajasthan-palace.png",
+    image: "/images/hawa-mahal-jaipur.jpg",
     author: "Priya Sharma",
     date: "Dec 15, 2024",
     category: "Destinations",
@@ -44,19 +44,19 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
     {
       id: "kerala-backwaters-guide",
       title: "The Ultimate Guide to Kerala Backwaters",
-      image: "/images/kerala-backwaters.png",
+      image: "/images/kerala-backwaters-sunset.jpg",
       category: "Travel Tips",
     },
     {
       id: "temples-tamil-nadu",
       title: "Spiritual Journey: Temples of Tamil Nadu",
-      image: "/images/temple-architecture.png",
+      image: "/images/konark-sun-temple.jpg",
       category: "Spiritual",
     },
     {
       id: "himachal-adventure",
       title: "Adventure Sports in Himachal Pradesh",
-      image: "/images/himachal-mountains.png",
+      image: "/images/golden-temple.jpg",
       category: "Adventure",
     },
   ]
