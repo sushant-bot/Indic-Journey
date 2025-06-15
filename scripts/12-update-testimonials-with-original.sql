@@ -1,0 +1,18 @@
+-- Delete all existing testimonials
+DELETE FROM testimonials;
+
+-- Insert original testimonials
+INSERT INTO testimonials (name, location, rating, text, tour, enabled, created_at) VALUES
+('Dr. Amy Light', 'USA', 5, 'I am pleased to write the highest recommendation for Indic Journeys and it''s founder Mayur Kunte. I''m American and this was my fourth visit to India; I have always traveled "do-it-yourself" style. I was a little short on time and had heard good things about this tour company so I decided to book a 10 day tour of Jaipur and Jodhpur with them. I was amazed how much easier travel was with Mayur''s help. He purchased my plane tickets, got my boarding passes and seats, booked hotel accommodations as I requested (3 star, clean and safe), scheduled drivers and formed a suggested itinerary. I had complete freedom to sightsee as I wished and at my pace. Mayur stayed in contact with me through WhatsApp and responded immediately to any questions I had. His quality of services was truly amazing. Further, I found the cost was completely reasonable as he''s familiar with many more choices of hotels and transportation. My Rajasthan trip was so much better and easier than if I''d done it without his help. I will certainly use his tour company for any further travel in India or Asia.', 'Rajasthan 10 Day Tour', true, NOW()),
+
+('Dr. Amy Light', 'USA', 5, 'I am an American and was visiting my Indian friend in Pune. Based on her prior excellent history with Indic tours, we booked a Pune Heritage Walk tour with Mayur Kunte, founder of Indic Journey''s. Mayur showed us many local sites that we might have otherwise missed. Further, if you are a history buff or want the deeper story behind any of the sites, Mayur is the person for your tour. He has an encyclopedic knowledge of, and a passion for, Indian history. Despite seeing many sights, I never felt pushed along and the day felt full but relaxed. Our tour with him was amazing and I have no hesitation in recommending his company for the Heritage Walk in Pune.', 'Pune Heritage Walk', true, NOW()),
+
+('Mr. Uday Gosavi', 'Pune', 5, 'Mayur, a big thank you for organising a seamless and stress free trip. No glitches anywhere. Thank you once again.', 'Gujarat Glimpse Tour', true, NOW()),
+
+('Vaishali & Rohit Jail', 'India', 5, 'We visited Almaty, Kazakhstan.. The entire trip was booked through Indic Journeys. We were extremely pleased with the travel stay and entire local site seeing arranged by them.. Couple of unseen issues were very promptly and professionally handled.. We highly recommend them for any of your future travel plans.', 'Kazakhstan Tour', true, NOW()),
+
+('Dr. Vinaya Bhagwat and Group', 'India', 5, 'We had wonderful trip to Cambodia, Laos and Vietnam. I am grateful for your patience, hospitality and kindness in looking after us during our journey. It was great relief to have constant back up of Mayur on WhatsApp. It gave me (and probably all) peace of mind.', 'Cambodia - Laos - Vietnam Tour', true, NOW()),
+
+('Brigadier (Retd.) Dr. Rajeev Joshi', 'Pune', 5, 'Thanks Indic Journeys for a meticulously planned memorable Nepal trip. Looking forward for more tours 🙏🏻', 'Nepal Tour', true, NOW()),
+
+('Mrs. Mrudula Kathale', 'Pune', 5, 'It was the 2nd of March when we met Mayur Kunte for a Heritage Walk. The itinerary was designed for 5 famous historical spots in Pune, namely, Panchaleshwar Temple, Omkareshwar Temple, Shaniwarwada, Trishundhya Ganpati and Kasba Ganpati. The joy of understanding rich history behind each one was truly overwhelming. He walked us through the history with such an ease as if all of us travelled to that era. We would like to go on such a wonderful journey with Mayur again and again.', 'Pune Heritage Walk', true, NOW());
