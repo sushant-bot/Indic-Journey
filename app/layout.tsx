@@ -7,6 +7,10 @@ export const metadata: Metadata = {
   title: "Indic-journey",
   description: "",
   generator: "Next.js",
+  icons: {
+    icon: '/logo.png',
+    apple: '/logo.png',
+  },
 }
 
 export default function RootLayout({

@@ -43,20 +43,47 @@ export default function ContactPage() {
     setIsSubmitting(true)
 
     try {
-      const response = await fetch("/api/contact", {
-        method: "POST",
+      // Construct message for WhatsApp
+      const message = `
+Hello! I'd like to inquire about your services:
+- Name: ${formData.firstName} ${formData.lastName}
+- Email: ${formData.email}
+- Phone: ${formData.phone}
+- Tour Type: ${formData.tourType || 'General Inquiry'}
+- Travelers: ${formData.travelers || 'Not specified'}
+- Destination: ${formData.destination || 'Not specified'}
+- Message: ${formData.message}
+      `.trim();
+      
+      // Open WhatsApp with pre-filled message
+      const whatsappNumber = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "919371131975"
+      const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`
+      window.open(whatsappUrl, '_blank')
+      
+      // Send the data to API route
+      const response = await fetch('/api/send-email', {
+        method: 'POST',
         headers: {
-          "Content-Type": "application/json",
+          'Content-Type': 'application/json',
         },
-        body: JSON.stringify(formData),
+        body: JSON.stringify({
+          name: `${formData.firstName} ${formData.lastName}`,
+          email: formData.email,
+          phone: formData.phone,
+          destination: formData.destination,
+          travelers: formData.travelers,
+          duration: "Not specified", // Not in this form
+          message: formData.message,
+          tourType: formData.tourType,
+        }),
       })
-
+      
       const data = await response.json()
 
       if (data.success) {
         toast({
           title: "Message Sent Successfully!",
-          description: data.message,
+          description: "We'll get back to you as soon as possible.",
           duration: 5000,
         })
 
@@ -74,7 +101,7 @@ export default function ContactPage() {
       } else {
         toast({
           title: "Failed to Send Message",
-          description: data.message,
+          description: data.error || "Please try again later.",
           variant: "destructive",
           duration: 5000,
         })
@@ -323,7 +350,7 @@ export default function ContactPage() {
                       </div>
                       <div>
                         <h4 className="text-lg font-semibold mb-1">Phone</h4>
-                        <p className="opacity-90">+91 9371131975</p>
+                        <p className="opacity-90">+91 9371131975 / +91 98606 30123</p>
                       </div>
                     </div>
 
@@ -368,28 +395,33 @@ export default function ContactPage() {
                   <h3 className="text-2xl font-bold mb-6 font-poppins text-gray-800">Connect With Us</h3>
                   <div className="flex space-x-4">
                     <a
-                      href="#"
+                      href="https://www.instagram.com/indicjourneys"
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="bg-gradient-to-br from-yellow-400 to-red-600 p-4 rounded-full text-white hover:shadow-lg transition-all transform hover:scale-110"
                     >
                       <Instagram className="h-6 w-6" />
                     </a>
                     <a
-                      href="#"
-                      className="bg-gradient-to-br from-yellow-400 to-red-600 p-4 rounded-full text-white hover:shadow-lg transition-all transform hover:scale-110"
+                      href="https://wa.me/919371131975"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="bg-gradient-to-br from-green-500 to-green-600 p-4 rounded-full text-white hover:shadow-lg transition-all transform hover:scale-110"
                     >
-                      <Facebook className="h-6 w-6" />
-                    </a>
-                    <a
-                      href="#"
-                      className="bg-gradient-to-br from-yellow-400 to-red-600 p-4 rounded-full text-white hover:shadow-lg transition-all transform hover:scale-110"
-                    >
-                      <Linkedin className="h-6 w-6" />
-                    </a>
-                    <a
-                      href="#"
-                      className="bg-gradient-to-br from-yellow-400 to-red-600 p-4 rounded-full text-white hover:shadow-lg transition-all transform hover:scale-110"
-                    >
-                      <MessageCircle className="h-6 w-6" />
+                      <svg 
+                        xmlns="http://www.w3.org/2000/svg" 
+                        width="24" 
+                        height="24" 
+                        viewBox="0 0 24 24" 
+                        fill="none" 
+                        stroke="currentColor" 
+                        strokeWidth="2" 
+                        strokeLinecap="round" 
+                        strokeLinejoin="round"
+                      >
+                        <path d="M3 21l1.65-3.8a9 9 0 1 1 3.4 2.9L3 21"/>
+                        <path d="M9 10a.5.5 0 0 0 1 0V9a.5.5 0 0 0-1 0v1a5 5 0 0 0 5 5h1a.5.5 0 0 0 0-1h-1a.5.5 0 0 0 0 1"/>
+                      </svg>
                     </a>
                   </div>
                 </CardContent>
@@ -481,10 +513,26 @@ export default function ContactPage() {
 
             <div className="mt-8 text-center">
               <p className="text-gray-600 mb-4">Still have questions? Contact our support team</p>
-              <Button className="bg-gradient-to-r from-yellow-400 to-red-600 hover:from-yellow-500 hover:to-red-700 text-black font-semibold rounded-full px-6 py-2">
-                Ask a Question
-                <MessageCircle className="ml-2 h-4 w-4" />
-              </Button>
+              <a href="https://wa.me/919371131975" target="_blank" rel="noopener noreferrer">
+                <Button className="bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white font-semibold rounded-full px-6 py-2">
+                  Ask a Question on WhatsApp
+                  <svg 
+                    xmlns="http://www.w3.org/2000/svg" 
+                    width="16" 
+                    height="16" 
+                    viewBox="0 0 24 24" 
+                    fill="none" 
+                    stroke="currentColor" 
+                    strokeWidth="2" 
+                    strokeLinecap="round" 
+                    strokeLinejoin="round"
+                    className="ml-2"
+                  >
+                    <path d="M3 21l1.65-3.8a9 9 0 1 1 3.4 2.9L3 21"/>
+                    <path d="M9 10a.5.5 0 0 0 1 0V9a.5.5 0 0 0-1 0v1a5 5 0 0 0 5 5h1a.5.5 0 0 0 0-1h-1a.5.5 0 0 0 0 1"/>
+                  </svg>
+                </Button>
+              </a>
             </div>
           </div>
         </div>

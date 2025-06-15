@@ -198,7 +198,7 @@ export function FeaturedJourneysSection() {
     )
   }
 
-  // Update the links for the "View Details" buttons to point to the correct pages
+  
   const tourLinks = [
     "/fixed-departures/do-dham-kedarnath-badrinath",
     "/fixed-departures/classic-kerala",

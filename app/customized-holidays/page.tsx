@@ -5,6 +5,8 @@ import { Badge } from "@/components/ui/badge"
 import { Users, ArrowRight, Heart, Settings, Globe, Calendar, Star, Sparkles, GaugeCircle } from "lucide-react"
 import Link from "next/link"
 import Image from "next/image"
+import { SimpleInquiryForm } from "@/components/simple-inquiry-form"
+import { InquiryForm } from "@/components/inquiry-form"
 
 export default function CustomizedHolidaysPage() {
   const packages = [
@@ -173,7 +175,7 @@ export default function CustomizedHolidaysPage() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
             {packages.map((pkg) => (
               <Card
                 key={pkg.type}
@@ -187,32 +189,36 @@ export default function CustomizedHolidaysPage() {
                       fill
                       className="object-cover group-hover:scale-105 transition-transform duration-700"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
                   </div>
-
-                  <div className="absolute bottom-4 left-4 right-4">
-                    <h3 className="text-lg font-bold text-white mb-1 font-poppins">{pkg.title}</h3>
-                    <p className="text-white/90 font-open-sans text-sm line-clamp-2">{pkg.description}</p>
-                  </div>
-
-                  <div className="absolute top-4 right-4">
-                    <Badge className="bg-gradient-to-r from-orange-500 to-red-600 text-white font-bold px-2 py-1 text-xs">
-                      Starting {pkg.startingPrice}
-                    </Badge>
+                  
+                  {/* Type Badge */}
+                  <Badge className="absolute top-3 right-3 bg-orange-500 text-white font-semibold text-xs px-2 py-1">
+                    {pkg.type}
+                  </Badge>
+                  
+                  {/* Price Overlay */}
+                  <div className="absolute bottom-3 right-3 bg-black/80 text-white px-2 py-1 rounded-md backdrop-blur-sm text-sm">
+                    <div className="font-bold">Starting {pkg.startingPrice}</div>
                   </div>
                 </div>
 
                 <CardContent className="p-4">
+                  <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-orange-600 transition-colors duration-300 font-poppins line-clamp-2">
+                    {pkg.title}
+                  </h3>
+
+                  <p className="text-sm text-gray-600 mb-3 line-clamp-2 font-open-sans">
+                    {pkg.description}
+                  </p>
+
                   <div className="mb-4">
-                    <h4 className="font-semibold text-gray-900 mb-2 font-poppins flex items-center text-sm">
-                      <Sparkles className="h-3 w-3 mr-1 text-orange-500" /> Features:
-                    </h4>
-                    <div className="grid grid-cols-2 gap-1">
-                      {pkg.features.map((feature, idx) => (
+                    <h4 className="font-semibold text-gray-900 mb-2 font-poppins text-sm">Features:</h4>
+                    <div className="flex flex-wrap gap-1">
+                      {pkg.features.slice(0, 3).map((feature, idx) => (
                         <Badge
                           key={idx}
                           variant="outline"
-                          className="text-xs border-gray-300 text-gray-600 justify-center hover:bg-gray-50 transition-colors py-1"
+                          className="text-xs border-gray-300 text-gray-600 py-0"
                         >
                           {feature}
                         </Badge>
@@ -360,6 +366,15 @@ export default function CustomizedHolidaysPage() {
               Let our travel experts create a personalized itinerary that exceeds your expectations.
             </p>
 
+            {/* --- QUOTE REQUEST FORM --- */}
+            <div className="bg-white rounded-2xl shadow-2xl p-8 max-w-3xl mx-auto mb-10">
+              <h3 className="text-2xl font-bold mb-2 text-gray-900 text-center">Get Your Free Quote</h3>
+              <p className="text-gray-600 mb-6 text-center">Fill out the form and we'll get back to you within 24 hours</p>
+              <div className="max-w-2xl mx-auto">
+                <InquiryForm />
+              </div>
+            </div>
+
             <div className="bg-white/10 backdrop-blur-sm p-6 rounded-2xl mb-10 inline-block">
               <div className="grid grid-cols-4 gap-4 text-center">
                 <div>
@@ -383,15 +398,14 @@ export default function CustomizedHolidaysPage() {
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/contact">
-                <Button className="bg-white text-red-600 hover:bg-gray-100 hover:text-red-700 text-lg px-8 py-6 h-auto rounded-xl font-semibold">
+                <Button className="bg-white text-red-600 hover:bg-gray-100 text-lg px-8 py-6 h-auto rounded-xl font-semibold shadow-lg">
                   Start Planning Now
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
               </Link>
               <Link href="/fixed-departures">
                 <Button
-                  variant="outline"
-                  className="border-2 border-white text-white hover:bg-white hover:text-red-600 text-lg px-8 py-6 h-auto rounded-xl font-semibold"
+                  className="bg-black/30 backdrop-blur-sm border-2 border-white text-white hover:bg-black/50 hover:border-white/90 text-lg px-8 py-6 h-auto rounded-xl font-semibold shadow-lg"
                 >
                   View Fixed Departures
                   <Calendar className="ml-2 h-5 w-5" />

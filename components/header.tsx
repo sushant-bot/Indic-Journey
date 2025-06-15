@@ -36,7 +36,7 @@ export function Header() {
           <div className="flex items-center space-x-4 sm:space-x-6">
             <div className="flex items-center space-x-1.5">
               <Phone className="h-3 w-3 sm:h-3.5 sm:w-3.5" />
-              <span className="font-semibold">+91 9371131975</span>
+              <span className="font-semibold">+91 98606 30123 / +91 9371131975</span>
             </div>
             <div className="hidden sm:flex items-center space-x-1.5">
               <Award className="h-3 w-3 sm:h-3.5 sm:w-3.5" />
@@ -46,7 +46,7 @@ export function Header() {
           <div className="flex items-center space-x-4 sm:space-x-6">
             <div className="flex items-center space-x-1.5">
               <Star className="h-3 w-3 sm:h-3.5 sm:w-3.5 fill-current" />
-              <span className="font-semibold">4.9/5 • 500+ Travelers</span>
+              <span className="font-semibold">4.5/5 • 500+ Travelers</span>
             </div>
           </div>
         </div>

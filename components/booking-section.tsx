@@ -32,10 +32,67 @@ export function BookingSection() {
     setFormData((prev) => ({ ...prev, [name]: value }))
   }
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    // Handle form submission
-    console.log("Form submitted:", formData)
+    
+    try {
+      // Construct message for WhatsApp
+      const message = `
+Hello! I'd like to request a booking:
+- Name: ${formData.name}
+- Email: ${formData.email}
+- Phone: ${formData.phone}
+- Destination: ${formData.destination}
+- Number of Travelers: ${formData.travelers}
+- Duration: ${formData.duration}
+- Additional Info: ${formData.message}
+      `.trim()
+      
+      // Open WhatsApp with pre-filled message
+      const whatsappNumber = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "919371131975"
+      const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`
+      window.open(whatsappUrl, '_blank')
+      
+      // Send the data to your API route
+      const response = await fetch('/api/send-email', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+          destination: formData.destination,
+          travelers: formData.travelers,
+          duration: formData.duration,
+          message: formData.message,
+          tourType: "Booking Request",
+        }),
+      })
+      
+      if (!response.ok) {
+        throw new Error('Failed to send email')
+      }
+      
+      // Reset form after successful submission
+      setFormData({
+        name: "",
+        email: "",
+        phone: "",
+        destination: "",
+        travelers: "",
+        duration: "",
+        message: "",
+      })
+      
+      // Handle form submission success
+      console.log("Form submitted successfully")
+      alert("Your booking request has been sent successfully!")
+    } catch (error) {
+      console.error("Error sending form:", error)
+      alert("There was an error sending your request. Please try again.")
+    }
   }
 
   const features = [
@@ -95,7 +152,7 @@ export function BookingSection() {
                 <div className="text-sm text-gray-600">Destinations</div>
               </div>
               <div className="text-center">
-                <div className="text-2xl font-bold text-orange-600 mb-1">4.9</div>
+                <div className="text-2xl font-bold text-orange-600 mb-1">4.5</div>
                 <div className="text-sm text-gray-600">Average Rating</div>
               </div>
             </div>

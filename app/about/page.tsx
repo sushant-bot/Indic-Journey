@@ -57,10 +57,10 @@ export default function AboutPage() {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
               <span className="text-yellow-400 font-semibold font-open-sans">OUR STORY</span>
-              <h2 className="text-3xl lg:text-4xl font-bold font-poppins mb-6">The Journey of Indic Journeys</h2>
+              <h2 className="text-3xl lg:text-4xl font-bold font-poppins mb-6">Our Journey</h2>
               <div className="space-y-4 font-open-sans text-gray-700">
                 <p>
-                  Founded in 2010, Indic Journeys began with a simple vision: to share the extraordinary diversity, rich
+                  Founded in 2021, Indic Journeys began with a simple vision: to share the extraordinary diversity, rich
                   heritage, and vibrant soul of India with travelers seeking authentic experiences.
                 </p>
                 <p>
@@ -161,7 +161,7 @@ export default function AboutPage() {
           <p className="text-xl max-w-3xl mx-auto mb-10 font-open-sans">
             Discover India's extraordinary destinations with our expertly crafted travel experiences.
           </p>
-          <Link href="/tours">
+          <Link href="/fixed-departures">
             <Button className="bg-black hover:bg-gray-800 text-white text-lg px-8 py-6 rounded-lg font-semibold">
               Browse Our Tours
               <ArrowRight className="ml-2 h-5 w-5" />

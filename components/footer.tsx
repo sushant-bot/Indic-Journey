@@ -25,21 +25,7 @@ export function Footer() {
                 variant="ghost"
                 className="hover:bg-yellow-400 hover:text-black transition-all duration-300 w-12 h-12"
               >
-                <Facebook className="h-6 w-6" />
-              </Button>
-              <Button
-                size="icon"
-                variant="ghost"
-                className="hover:bg-yellow-400 hover:text-black transition-all duration-300 w-12 h-12"
-              >
                 <Instagram className="h-6 w-6" />
-              </Button>
-              <Button
-                size="icon"
-                variant="ghost"
-                className="hover:bg-yellow-400 hover:text-black transition-all duration-300 w-12 h-12"
-              >
-                <Twitter className="h-6 w-6" />
               </Button>
               <Button
                 size="icon"
@@ -199,19 +185,19 @@ export function Footer() {
             </p>
             <div className="flex flex-wrap justify-center sm:justify-end space-x-6 sm:space-x-8">
               <Link
-                href="/privacy"
+                href="/privacy-policy"
                 className="text-gray-400 hover:text-yellow-400 text-sm sm:text-base transition-colors font-medium"
               >
                 Privacy Policy
               </Link>
               <Link
-                href="/terms"
+                href="/terms-of-service"
                 className="text-gray-400 hover:text-yellow-400 text-sm sm:text-base transition-colors font-medium"
               >
                 Terms of Service
               </Link>
               <Link
-                href="/cancellation"
+                href="/cancellation-policy"
                 className="text-gray-400 hover:text-yellow-400 text-sm sm:text-base transition-colors font-medium"
               >
                 Cancellation Policy
