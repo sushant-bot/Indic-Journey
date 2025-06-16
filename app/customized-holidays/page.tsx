@@ -167,7 +167,7 @@ export default function CustomizedHolidaysPage() {
       <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <Badge className="bg-orange-100 text-orange-800 px-3 py-1 mb-4">Explore Options</Badge>
+            <Badge className="bg-orange-100 text-orange-800 px-3 py-1 mb-4" style={{ display: 'none' }}>Explore Options</Badge>
             <h2 className="text-4xl font-bold mb-4 font-poppins">Choose Your Adventure</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto font-open-sans">
               Discover our carefully curated customized holiday experiences, each designed to offer unique cultural and

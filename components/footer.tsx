@@ -19,13 +19,15 @@ export function Footer() {
               Crafting transformative travel experiences across India and the world. Your journey of exploration,
               experience, and evolution starts here.
             </p>
-            <div className="flex space-x-4">
-              <Button
+            <div className="flex space-x-4">              <Button
                 size="icon"
                 variant="ghost"
                 className="hover:bg-yellow-400 hover:text-black transition-all duration-300 w-12 h-12"
+                asChild
               >
-                <Instagram className="h-6 w-6" />
+                <a href="https://www.instagram.com/indic.journeys?igsh=dnpxMWRlNXQxazc1" target="_blank" rel="noopener noreferrer">
+                  <Instagram className="h-6 w-6" />
+                </a>
               </Button>
               <Button
                 size="icon"
@@ -177,12 +179,24 @@ export function Footer() {
           </div>
         </div>
 
-        {/* Bottom Bar */}
-        <div className="border-t border-gray-800 mt-12 sm:mt-16 pt-8 sm:pt-10">
+        {/* Bottom Bar */}        <div className="border-t border-gray-800 mt-12 sm:mt-16 pt-8 sm:pt-10">
           <div className="flex flex-col sm:flex-row justify-between items-center space-y-6 sm:space-y-0">
-            <p className="text-gray-400 text-sm sm:text-base font-['Open_Sans'] text-center sm:text-left">
-              © 2024 Indic Journeys. All rights reserved.
-            </p>
+            <div className="flex flex-col space-y-2 text-center sm:text-left">
+              <p className="text-gray-400 text-sm sm:text-base font-['Open_Sans']">
+                © 2024 Indic Journeys. All rights reserved.
+              </p>
+              <p className="text-gray-500 text-sm">
+                Developed by <a 
+                  href="https://NextureX.com" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-gray-400 hover:text-yellow-400 transition-all duration-300 relative group"
+                >
+                  NextureX
+                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-yellow-400 transition-all duration-300 group-hover:w-full"></span>
+                </a>
+              </p>
+            </div>
             <div className="flex flex-wrap justify-center sm:justify-end space-x-6 sm:space-x-8">
               <Link
                 href="/privacy-policy"

@@ -48,7 +48,7 @@ export default function SettingsPage() {
     contact_address: "123 Travel Street, New Delhi, India",
     social_media: {
       facebook: "https://facebook.com/newzipindic",
-      instagram: "https://instagram.com/newzipindic",
+      instagram: "https://www.instagram.com/indic.journeys?igsh=dnpxMWRlNXQxazc1",
     },
     footer_text: "© 2023 New Zip Indic. All rights reserved.",
     seo: {

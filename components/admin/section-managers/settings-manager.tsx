@@ -38,7 +38,7 @@ export default function SettingsManager({ setIsLoading }: SettingsManagerProps) 
     contact_phone: "+91 1234567890",
     address: "123 Main Street, City, Country",
     facebook_url: "https://facebook.com",
-    instagram_url: "https://instagram.com",
+    instagram_url: "https://www.instagram.com/indic.journeys?igsh=dnpxMWRlNXQxazc1",
     twitter_url: "https://twitter.com",
     whatsapp_number: "+911234567890",
     logo_url: "/images/logo.png",

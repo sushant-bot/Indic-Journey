@@ -160,7 +160,7 @@ export default function HeritageWalksPage() {
       <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <Badge className="bg-orange-100 text-orange-800 px-4 py-2 text-base mb-6 font-bold rounded-full">
+            <Badge className="bg-orange-100 text-orange-800 px-4 py-2 text-base mb-6 font-bold rounded-full" style={{ display: 'none' }}>
               CURATED EXPERIENCES
             </Badge>
             <h2 className="text-3xl lg:text-4xl font-bold mb-3 text-center font-poppins">Explore Our Heritage Walks</h2>

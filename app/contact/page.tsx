@@ -395,7 +395,7 @@ Hello! I'd like to inquire about your services:
                   <h3 className="text-2xl font-bold mb-6 font-poppins text-gray-800">Connect With Us</h3>
                   <div className="flex space-x-4">
                     <a
-                      href="https://www.instagram.com/indicjourneys"
+                      href="https://www.instagram.com/indic.journeys?igsh=dnpxMWRlNXQxazc1"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="bg-gradient-to-br from-yellow-400 to-red-600 p-4 rounded-full text-white hover:shadow-lg transition-all transform hover:scale-110"
