@@ -318,16 +318,19 @@ export default function CambodiaGlimpsePage() {
 
                   <div className="mt-6 pt-6 border-t">
                     <h4 className="font-semibold mb-3">Need Help?</h4>
-                    <div className="space-y-2 text-sm">
-                      <div className="flex items-center space-x-2">
-                        <Phone className="h-4 w-4 text-teal-600" />
-                        <span>+91 98765 43210</span>
-                      </div>
-                      <div className="flex items-center space-x-2">
-                        <Mail className="h-4 w-4 text-teal-600" />
-                        <span>info@indicjourneys.com</span>
-                      </div>
-                    </div>
+                    <div className="text-lg font-bold text-teal-600 mb-1">+91 9371131975 / +91 98606 30123</div>
+                    <div className="text-gray-700 mb-4 text-sm">Call us for instant booking</div>
+                    <a
+                      href="https://wa.me/919371131975"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center justify-center w-full bg-green-500 hover:bg-green-600 text-white font-semibold py-2 px-3 rounded-lg transition-colors duration-200 text-sm"
+                    >
+                      <svg className="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M20.52 3.48A12 12 0 003.48 20.52l-1.32 4.8a1 1 0 001.24 1.24l4.8-1.32A12 12 0 0020.52 3.48zm-8.52 17a10 10 0 117.07-2.93A10 10 0 0112 20.48zm5.07-7.07l-2.12-2.12a1 1 0 00-1.41 0l-1.41 1.41a1 1 0 000 1.41l2.12 2.12a1 1 0 001.41 0l1.41-1.41a1 1 0 000-1.41z"/>
+                      </svg>
+                      WhatsApp Us
+                    </a>
                   </div>
                 </CardContent>
               </Card>

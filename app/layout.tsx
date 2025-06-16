@@ -4,7 +4,7 @@ import "./globals.css"
 import { WebsiteContentProvider } from "@/lib/website-content"
 
 export const metadata: Metadata = {
-  title: "Indic-journey",
+  title: "Indic Journeys | International and Domestic Tours",
   description: "",
   generator: "Next.js",
   icons: {

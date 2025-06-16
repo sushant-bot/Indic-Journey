@@ -62,7 +62,7 @@ export function ContactSection() {
     {
       title: "Head Office - Pune",
       address: "403 - Anandvan Residency, Lane A-31, Opp. Moti Bakery, Dhayari - 411041",
-      phone: "+91-9371131975",
+      phone: "+91-9371131975 / +91-9860630123",
       email: "indicjourneys@gmail.com",
     },
   ]
@@ -128,7 +128,7 @@ export function ContactSection() {
                   <Input
                     name="phone"
                     type="tel"
-                    placeholder="+91 XXXXX XXXXX"
+                    placeholder="+91 XXXXX XXXXX / +91 XXXXX XXXXX"
                     required
                     className="h-12 border-2 border-gray-200 focus:border-yellow-400 transition-colors rounded-xl text-base"
                   />
@@ -230,7 +230,7 @@ export function ContactSection() {
                     className="flex items-center space-x-3 text-gray-700 hover:text-yellow-600 transition-colors group"
                   >
                     <Phone className="h-5 w-5 group-hover:scale-110 transition-transform" />
-                    <span className="text-base font-bold">Call: +91-9371131975</span>
+                    <span className="text-base font-bold">Call: +91-9371131975 / +91-9860630123</span>
                   </a>
                   <a
                     href="mailto:indicjourneys@gmail.com"

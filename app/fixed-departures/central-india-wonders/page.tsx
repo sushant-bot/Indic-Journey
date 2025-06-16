@@ -364,25 +364,22 @@ export default function CentralIndiaWondersDetailPage() {
               <Card>
                 <CardHeader>
                   <CardTitle className="text-lg font-poppins text-orange-800">Need Help?</CardTitle>
+                  <div className="text-2xl font-bold text-orange-600 mb-1">+91 9371131975 / +91 98606 30123</div>
+                  <div className="text-gray-600 mb-4 text-sm">Call us for instant booking</div>
+                  <a
+                    href="https://wa.me/919371131975"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center justify-center w-full bg-green-500 hover:bg-green-600 text-white font-semibold py-3 px-4 rounded-lg transition-colors duration-200"
+                  >
+                    <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M20.52 3.48A12 12 0 003.48 20.52l-1.32 4.8a1 1 0 001.24 1.24l4.8-1.32A12 12 0 0020.52 3.48zm-8.52 17a10 10 0 117.07-2.93A10 10 0 0112 20.48zm5.07-7.07l-2.12-2.12a1 1 0 00-1.41 0l-1.41 1.41a1 1 0 000 1.41l2.12 2.12a1 1 0 001.41 0l1.41-1.41a1 1 0 000-1.41z" />
+                    </svg>
+                    WhatsApp Us
+                  </a>
                 </CardHeader>
                 <CardContent>
-                  <div className="space-y-3">
-                    <div className="flex items-center">
-                      <Phone className="h-4 w-4 text-orange-600 mr-2" />
-                      <span className="text-sm font-open-sans">+91-9371131975</span>
-                    </div>
-                    <div className="flex items-center">
-                      <Mail className="h-4 w-4 text-orange-600 mr-2" />
-                      <span className="text-sm font-open-sans">info@indicjourneys.com</span>
-                    </div>
-                    <Button
-                      variant="outline"
-                      className="w-full mt-4 border-orange-600 text-orange-600 hover:bg-orange-50"
-                    >
-                      <Phone className="h-4 w-4 mr-2" />
-                      Call Now
-                    </Button>
-                  </div>
+                  <div className="space-y-3"></div>
                 </CardContent>
               </Card>
             </div>

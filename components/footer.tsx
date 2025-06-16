@@ -147,7 +147,7 @@ export function Footer() {
                   href="tel:+919371131975"
                   className="text-gray-300 text-base sm:text-lg font-medium hover:text-yellow-400 transition-colors"
                 >
-                  +91-9371131975
+                  +91-9371131975 / +91-9860630123
                 </a>
               </div>
               <div className="flex items-center space-x-3">
